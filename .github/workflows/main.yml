@@ -36,8 +36,8 @@ jobs:
       ports:
         - 3128:3128
     steps:
+      - name: Use curl with proxy
+        run: curl --proxy http://localhost:3128 https://httpbin.org/get        
       - name: Start Squid proxy
         run: squid -N -d 1
-      - name: Use curl with proxy
-        run: curl --proxy http://localhost:3128 https://httpbin.org/get
 
