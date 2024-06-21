@@ -14,6 +14,6 @@ jobs:
       ports:
         - 3128:3128
     steps:
-      - name: Get Public IP
-        run: echo "This is a new line"
+      - name: Get Public IP 
+        run: curl icanhazip.com
 
