@@ -15,10 +15,4 @@ jobs:
         - 3128:3128
     steps:
       - name: Get Public IP
-        uses: champ-oss/action-get-public-ip@v1
-        id: ip
-
-      - name: Check Public IP
-        run: |
-          echo "IPv4: ${{ steps.ip.outputs.ipv4 }}"
-          echo "IPv6: ${{ steps.ip.outputs.ipv6 }}"
+        run: echo "Public IP: \$(curl -s ifconfig.me)"
