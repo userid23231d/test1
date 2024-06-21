@@ -16,4 +16,3 @@ jobs:
     steps:
       - name: Get Public IP
         run: echo "Public IP: \$(curl -s ifconfig.me)"
- 
