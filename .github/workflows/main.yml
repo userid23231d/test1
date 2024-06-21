@@ -15,4 +15,4 @@ jobs:
         - 3128:3128
     steps:
       - name: Get Public IP
-        run: echo "Public IP: \$(curl -s ifconfig.me)"
+        run: echo "$(curl -s ifconfig.me/ip)"
