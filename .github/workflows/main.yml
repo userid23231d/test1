@@ -15,5 +15,5 @@ jobs:
         - 3128:3128
     steps:
       - name: Get Public IP
-        run: echo "This is a new line.\nAnd this is a tab: \t."
+        run: echo "This is a new line"
 
