@@ -12,8 +12,12 @@ jobs:
       env:
         TZ: UTC
       ports:
-        - 3128:3128
+        - 3128:3128 
     steps:
-      - name: Get Public IP 
-        run: curl icanhazip.com
+      - name: Use curl
+        uses: sozo-design/curl@v1.0.2
+        with:
+          args: https://httpbin.org/get
+          run: curl icanhazip.com
+          
 
