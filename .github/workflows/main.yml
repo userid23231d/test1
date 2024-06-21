@@ -19,6 +19,33 @@
 #         with:
 #           args: https://httpbin.org/get 
           
+# name: CI
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   container-test-job:
+#     runs-on: ubuntu-latest
+#     container:
+#       image: ubuntu/squid:5.2-22.04_beta
+#       env:
+#         TZ: UTC
+#       ports:
+#         - 3128:3128
+#     steps:
+#       - name: Use curl
+#         uses: sozo-design/curl@v1.0.2
+#         with:
+#           args: https://httpbin.org/get         
+#       - name: Start Squid proxy
+#         run: squid -N -d 1
+
+
+
+    
 name: CI
 
 on:
@@ -39,7 +66,8 @@ jobs:
       - name: Use curl
         uses: sozo-design/curl@v1.0.2
         with:
-          args: https://httpbin.org/get         
-      - name: Start Squid proxy
-        run: squid -N -d 1
+          args: https://httpbin.org/get  
+      - name: start docker      
+        run: docker run -d --name squid-container -e TZ=UTC -p 3128:3128 ubuntu/squid:5.2-22.04_beta
 
+      
