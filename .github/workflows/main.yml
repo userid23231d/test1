@@ -18,6 +18,6 @@ jobs:
         uses: sozo-design/curl@v1.0.2
         with:
           args: https://httpbin.org/get
-          run: curl icanhazip.com
+          # run: curl icanhazip.com
           
 
