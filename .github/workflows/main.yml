@@ -63,8 +63,7 @@ jobs:
       - name: Set up Docker
         uses: docker/setup-qemu-action@v1
       - name: Run squid container
-        run: |
-        if: always()
+        run: | 
           docker run -d --name squid-container -e TZ=UTC -p 3128:3128 ubuntu/squid:5.2-22.04_beta
       - name: Get container IP
         run: |
